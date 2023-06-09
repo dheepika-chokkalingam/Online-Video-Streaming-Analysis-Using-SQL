@@ -1,4 +1,96 @@
-- Analysis in Customer Table data
+/* Cleaning Data */
+
+/* Checking for Duplicate Data in Customer Table data */
+
+'''
+SELECT customer_id,
+		store_id,
+		first_name,
+		last_name,
+		email,
+		address_id,
+		activebool,
+		create_date,
+		COUNT(*)
+FROM customer
+GROUP BY customer_id,
+		store_id,
+		first_name,
+		last_name,
+		email,
+		address_id,
+		activebool,
+		create_date
+HAVING COUNT(*) >1;
+'''
+
+/* Checking for Duplicate Data in Film Table data */
+
+'''
+SELECT title,
+		release_year,
+		language_id,
+		rental_duration,
+		rental_rate,
+		length,
+		replacement_cost,
+		rating,
+		COUNT(*)
+FROM film
+GROUP BY title,
+		release_year,
+		language_id,
+		rental_duration,
+		rental_rate,
+		length,
+		replacement_cost,
+		rating
+HAVING COUNT(*) >1;
+'''
+
+/* Checking for non-uniform data in Customer Table */
+
+'''
+SELECT DISTINCT active
+FROM customer;
+'''
+
+'''
+SELECT DISTINCT activebool
+FROM customer;
+'''
+
+/* Checking for non-uniform data in Film Table */
+
+'''
+SELECT DISTINCT rating
+FROM film;
+'''
+
+'''
+SELECT DISTINCT release_year
+FROM film;
+'''
+
+/* Checking for missing data in Customer Table */
+
+'''
+SELECT *
+FROM customer
+WHERE email IS NULL;
+'''
+
+/* Checking for missing data in Film Table */
+
+'''
+SELECT *
+FROM film
+WHERE rating IS NULL;
+'''
+
+/* Summarizing Data */
+
+/* Analysis in Customer Table data */
 
 ```
 SELECT MODE() WITHIN GROUP (ORDER BY first_name) AS "Most Used First Name",
@@ -9,9 +101,9 @@ SELECT MODE() WITHIN GROUP (ORDER BY first_name) AS "Most Used First Name",
 FROM customer;
 ```
 
-- Analysis in Film Table data
+/* Analysis in Film Table data */
 
-
+'''
 SELECT MODE() WITHIN GROUP (ORDER BY title) AS "Most Used Film",
         MODE() WITHIN GROUP (ORDER BY description) AS "Most Used Description",
         MODE() WITHIN GROUP (ORDER BY release_year) AS "Most Used Release Year",
@@ -32,3 +124,4 @@ SELECT MODE() WITHIN GROUP (ORDER BY title) AS "Most Used Film",
         MAX(replacement_cost) AS "Maximum Replacement Cost",
         AVG(replacement_cost) AS "Average Replacement Cost"
 FROM film;
+'''
