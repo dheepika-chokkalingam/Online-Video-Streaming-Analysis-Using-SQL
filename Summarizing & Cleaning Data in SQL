@@ -2,7 +2,6 @@
 
 /* Checking for Duplicate Data in Customer Table data */
 
-'''
 SELECT customer_id,
 		store_id,
 		first_name,
@@ -22,11 +21,9 @@ GROUP BY customer_id,
 		activebool,
 		create_date
 HAVING COUNT(*) >1;
-'''
 
 /* Checking for Duplicate Data in Film Table data */
 
-'''
 SELECT title,
 		release_year,
 		language_id,
@@ -46,7 +43,6 @@ GROUP BY title,
 		replacement_cost,
 		rating
 HAVING COUNT(*) >1;
-'''
 
 /* Checking for non-uniform data in Customer Table */
 
