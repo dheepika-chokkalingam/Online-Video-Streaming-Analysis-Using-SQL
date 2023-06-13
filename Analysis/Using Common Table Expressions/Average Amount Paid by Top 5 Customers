@@ -43,5 +43,5 @@ WITH top10countries_cte (country) AS
 			
 /* Average Amount Paid by Top 5 Customers */
 
-SELECT AVG(total) AS top5average
+SELECT AVG(total) AS "Average Amount Paid by Top 5 Customers"
 FROM top5customers_cte;
