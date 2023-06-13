@@ -9,7 +9,16 @@ FROM customer A
 LEFT JOIN address B ON A.address_id = B.address_id
 LEFT JOIN city C ON B.city_id = C.city_id
 LEFT JOIN country D ON C.country_id = D.country_id
-WHERE country IN ('India', 'China', 'United States', 'Japan', 'Mexico', 'Brazil', 'Russian Federation', 'Philippines', 'Turkey', 'Indonesia')
-GROUP BY country, city
-ORDER BY COUNT(customer_id) DESC
+WHERE country IN ('India', 
+                'China', 
+                'United States', 
+                'Japan', 
+                'Mexico', 
+                'Brazil', 
+                'Russian Federation', 
+                'Philippines', 
+                'Turkey', 
+                'Indonesia')
+GROUP BY D.country, C.city
+ORDER BY COUNT(A.customer_id) DESC
 LIMIT 10
