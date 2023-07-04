@@ -2,7 +2,6 @@
 
 /* Analysis in Film Table data */
 
-'''
 SELECT MODE() WITHIN GROUP (ORDER BY title) AS "Most Used Film",
         MODE() WITHIN GROUP (ORDER BY description) AS "Most Used Description",
         MODE() WITHIN GROUP (ORDER BY release_year) AS "Most Used Release Year",
@@ -23,4 +22,3 @@ SELECT MODE() WITHIN GROUP (ORDER BY title) AS "Most Used Film",
         MAX(replacement_cost) AS "Maximum Replacement Cost",
         AVG(replacement_cost) AS "Average Replacement Cost"
 FROM film;
-'''
