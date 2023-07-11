@@ -1,5 +1,5 @@
 # Online Video Streaming Analysis Using SQL
-Answers to complex business questions posed by fictitious online video streaming company's management board using SQL.
+### Answers to complex business questions posed by fictitious online video streaming company's management board using SQL.
 
 ## Overview
 Rockbuster Stealth LLC, a ficticious movie rental company, is looking to launch an online video rental service using its current movie rental licenses. Rockbuster's business intelligence department wants a data-driven analysis of its stock to mitigate risks and maximize profits during the launch. The final report will provide actionable insights to the company's key questions.
